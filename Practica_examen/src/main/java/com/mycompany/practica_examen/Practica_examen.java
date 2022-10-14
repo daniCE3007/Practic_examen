@@ -26,7 +26,26 @@ public class Practica_examen {
                     + "\n Digite el número de la opción que desea elegir: "));
 
             if (Opcion == 1) {
-
+                //Solicitud de usuario
+                String Usuario= JOptionPane.showInputDialog("Ingrese el "
+                        + "nombre del usuario");
+                //Asiganción de usuario
+                CalcularMulta myCalcularMulta = new CalcularMulta(Usuario);
+                //Mensaje de confirmación
+                JOptionPane.showMessageDialog(null,"El "
+                        + "usuario registrado es " + myCalcularMulta.getUsuario());
+                int opcion = Integer.parseInt(JOptionPane.showInputDialog("Desea"
+                        + " cambiar el nombre del usuario? Dijite 1 si es "
+                        + "correcto y 2 si es incorrecto"));
+                if (opcion==1){
+                    myCalcularMulta.setUsuario(JOptionPane.showInputDialog(""
+                            + "Ingrese el nombre del usuario:"));  
+                }else{
+                    JOptionPane.showMessageDialog(null, "El "
+                            + "nombre del usuario no a sido cambiado ");
+                }
+                myCalcularMulta.calcularMulta();
+                        
             } else if (Opcion == 2) {
                 
                 Dibujar Dibujo = new Dibujar();
